@@ -1,4 +1,5 @@
 # ignore all pyc and pyo files
 *.pyc
 *.pyo
+*.swp
 build
