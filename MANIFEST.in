@@ -1,0 +1,8 @@
+recursive-include webbrowser *
+recursive-include plugin_templates *
+recursive-include defaults *
+include *.py
+include webbrowser.sh
+include webbrowser.desktop
+include MANIFEST.in
+include COPYING
