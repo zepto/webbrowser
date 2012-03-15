@@ -124,7 +124,7 @@ class BrowserView(gtk.HPaned):
             #session.set_property('proxy-uri', proxy_uri)
         except Exception as err:
             # If it fails than we just won't use a proxy.
-            self.print_message("Failed to set a proxy: %s" % err, 
+            self.print_message("Failed to set a proxy: %s" % err,
                                MSGCOLOR, '38;5;64')
 
         self._profile = profile

@@ -249,8 +249,11 @@ class Plugins(gobject.GObject):
                 try:
                     plugin.run()
                 except Exception as err:
-                    print(err)
-                    plugin.exit()
+                    print("Error loading plugin %s: %s" % (plugin_name, err))
+                    try:
+                        plugin.exit()
+                    except Exception as err:
+                        print("Error exiting plugin %s: %s" % (plugin_name, err))
                     plugin = None
 
                 module_dict['plugin'] = plugin

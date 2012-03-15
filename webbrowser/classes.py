@@ -49,7 +49,7 @@ class SearchMenu(gtk.Menu):
             'get-profile-path' : (gobject.SIGNAL_RUN_LAST, gobject.TYPE_STRING, 
                 ()),
             }
-    
+
     def __init__(self):
         super(SearchMenu, self).__init__()
 
@@ -62,19 +62,26 @@ class SearchMenu(gtk.Menu):
         """
 
         search_engine_dict = {
-                'google': 'https://www.google.com/search?q=%s',
-                'google maps': 'http://maps.google.com/maps?q=%s',
-                'scroogle': 'https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s',
-                'cuil': 'http://www.cuil.com/search?q=%s',
-                'clusty': 'http://www.clusty.com/search?query=%s',
-                'wikipedia': 'http://en.wikipedia.org/wiki/Special:Search/%s',
-                'dictionary': 'http://www.thefreedictionary.com/%s',
-                'thesaurus': 'http://www.thesaurus.com/browse/%s',
-                'linuxsearch (arch)': 'http://linuxsearch.org/?cof=FORID%%3A9&cx=003883529982892832976%%3Anbpkmrypeqk&q=%s&sa=Search&siteurl=linuxsearch.org%%2F&d=Arch',
-                'shodan computer search': 'http://www.shodanhq.com/?q=%s', 
-                'duck duck go': 'https://duckduckgo.com/?q=%s&kr=-1',
-                'ixquick': 'https://www.ixquick.com/do/metasearch.pl?query=%s',
-                'default': 'ixquick',
+                "google": "https://www.google.com/search?q=%s",
+                "dictionary": "http://www.thefreedictionary.com/%s",
+                "linuxsearch (arch)": "http://linuxsearch.org/?cof=FORID%%3A9&cx=003883529982892832976%%3Anbpkmrypeqk&q=%s&sa=Search&siteurl=linuxsearch.org%%2F&d=Arch", 
+                "thesaurus": "http://www.thesaurus.com/browse/%s",
+                "clusty": "http://www.clusty.com/search?query=%s",
+                "cuil": "http://www.cuil.com/search?q=%s",
+                "google maps": "http://maps.google.com/maps?q=%s",
+                "ixquick": "https://www.ixquick.com/do/metasearch.pl?query=%s",
+                "default": "startpage",
+                "shodan computer search": "http://www.shodanhq.com/?q=%s",
+                "wikipedia": "http://en.wikipedia.org/wiki/Special:Search/%s",
+                "duck duck go": "https://duckduckgo.com/?q=%s&kr=-1",
+                "scroogle": "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s",
+                "aur": "https://aur.archlinux.org/packages.php?O=0&K=%s&do_Search=Go",
+                "stack overflow": "http://stackoverflow.com/search?q=%s",
+                "stackexchange": "http://stackexchange.com/search?q=%s",
+                "startpage": "https://startpage.com/do/search?query=%s",
+                "google translate": "http://translate.google.com/translate?u=%s",
+                "hacker news": "http://www.hnsearch.com/search#request/all&q=%s",
+                "google plus": "https://plus.google.com/s/%s"
                 }
         filename = '%s/search_engines' % SearchMenu._profile_path
         try:

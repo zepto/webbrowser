@@ -453,10 +453,13 @@ class PluginManager(object):
 
         """
 
-        if enable:
-            self._browser._plugins.enable(name)
-        else:
-            self._browser._plugins.disable(name)
+        try:
+            if enable:
+                self._browser._plugins.enable(name)
+            else:
+                self._browser._plugins.disable(name)
+        except Exception as err:
+            print("Error: %s" % err)
 
     def _reload_plugin(self, plugin_list, name_list):
         """ _reload_plugin -> Tell the plugin loader to reload all the
@@ -470,7 +473,7 @@ class PluginManager(object):
     def _refresh(self, plugin_list):
         """ _refresh -> Tell the plugin loader to refresh the list of 
         available plugins, loading new ones and unloading not available ones.
-        
+
         """
 
         self._browser._plugins.refresh()

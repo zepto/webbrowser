@@ -1,8 +1,8 @@
-# This is a template plugin.
+# This file is part of browser.  This is an example plugin.
 #
-# Copyright (C) 2010  Josiah Gordon <josiahg@gmail.com>
+# Copyright (C) 2009-2010  Josiah Gordon <josiahg@gmail.com>
 #
-# This is free software: you can redistribute it and/or modify
+# browser is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
@@ -15,27 +15,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-""" A tab plugin template.
+""" Main plugin template.
 
 """
 
 import os
-import glob
 
-class Template(object):
-    """ Template -> template.
+from plugin_loader import PluginBase
+
+class Example(PluginBase):
+    """ Plugin class
 
     """
 
-    def __init__(self, tab):
-        """ Initialize the script runner.
+    def __init__(self, browser):
+        """ Plugin
 
         """
 
-        self._tab = tab
+        super(Example, self).__init__(browser)
 
     def run(self):
-        """ Do the final initialization and run.
+        """ Initialize plugin.
 
         """
 
@@ -45,14 +46,13 @@ class Template(object):
             pass
 
     def exit(self):
-        """ exit -> Disconnect and stop.
+        """ Unload plugin.
 
         """
 
         try:
             pass
         except:
-            # Ignore errors.
             pass
 
-Plugin = Template
+Plugin = Example

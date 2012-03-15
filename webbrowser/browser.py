@@ -75,7 +75,7 @@ class Browser(BrowserBase):
 
         # Should we use a proxy.
         self._no_proxy = True
-        self._proxy = os.environ['http_proxy']
+        self._proxy = os.environ.get('http_proxy', '')
         os.environ['http_proxy'] = ''
 
         # This dictionary is used to keep track of which tabs have died
