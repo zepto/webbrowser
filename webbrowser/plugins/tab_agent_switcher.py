@@ -37,10 +37,10 @@ class AgentSwitcher(object):
         # Define the user agents.
         self._agent_dict = {
                 'Default': self._tab.get_browser_setting('user-agent'), #'Mozilla/5.0 (X11; U; Linux i686; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Safari/531.2+',
-                'Google Chrome':'Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Chrome/4.0.249.43 Safari/532.5',
-                'Firefox 3.6': 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2) Gecko/20100207 Namoroka/3.6',
-                'Opera': 'Opera/9.80 (X11; Linux i686; U; en) Presto/2.2.15 Version/10.10',
-                'Konqueror': 'Mozilla/5.0 (compatible; Konqueror/4.3; Linux) KHTML/4.3.5 (like Gecko)'
+                'Google Chrome':'Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19',
+                'Firefox 11.0': 'Mozilla/5.0 (X11; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0',
+                'Opera 12.00': 'Opera/9.80 (Windows NT 6.1; U; es-ES) Presto/2.9.181 Version/12.00',
+                'Konqueror': 'Mozilla/5.0 (compatible; Konqueror/4.5; FreeBSD) KHTML/4.5.4 (like Gecko)'
                 }
         self._agent = 'Default'
 
