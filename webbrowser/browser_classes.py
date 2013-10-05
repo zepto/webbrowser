@@ -39,7 +39,12 @@ import re
 from time import strftime
 from subprocess import Popen
 
-import Image, cStringIO
+try:
+    import Image
+except ImportError:
+    from PIL import Image
+
+import cStringIO
 import gtk
 import gobject
 import glib
