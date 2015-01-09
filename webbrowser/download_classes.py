@@ -53,7 +53,7 @@ class DownloadManager(gtk.ScrolledWindow):
 
         # A regex pattern for determining if a download is a movie.
         #self._movie_pat = re.compile(r'[\/=&]([^\/=&]*\.(fl.{1}|ogg|mp4|avi|mov|rm))([^a-zA-Z0-9]|$)', re.I)
-        self._movie_pat = re.compile(r'[\/=&]?([^\/=&]*\.(ifl|fl.{1}|iflv|ogg|webm|mkv|m4v|mp4|avi|mov|rm|mp3|wav))([^a-zA-Z0-9]|$)', re.I)
+        self._movie_pat = re.compile(r'[\/=&]*?([^\/=&]*\.(ifl|fl.{1}|iflv|ogg|webm|mkv|m4v|mp4|avi|mov|rm|mp3|wav))([^a-zA-Z0-9]|$)', re.I)
 
         self.set_policy('automatic', 'automatic')
         self.set_shadow_type(gtk.SHADOW_IN)

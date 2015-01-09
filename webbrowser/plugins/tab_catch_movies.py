@@ -88,7 +88,7 @@ class CatchMovie(object):
 
         movie_str = r'|'.join(pattern_list)
         self._movie_pat = re.compile(r'(%s)' % movie_str, re.I)
-        self._vid_ext_pat = re.compile(r'.*[\/=&]([^\/=&]*\.(fl.{1}|ogg|mp4|avi|mov|rm))([^a-zA-Z0-9]|$)', re.I)
+        self._vid_ext_pat = re.compile(r'.*[\/=&]*?([^\/=&]*\.(fl.{1}|ogg|mp4|avi|mov|rm|mp3|wav))([^a-zA-Z0-9]|$)', re.I)
 
     def _catch_movies(self, tab, uri):
         """ catch_movies -> Watches resource requests and catches movie requests.
@@ -101,6 +101,11 @@ class CatchMovie(object):
         match = self._movie_pat.search(uri)
         if match:
             self._log_func("movie: uri %s" % uri, 32, '38;5;69')
+
+            if self._vid_ext_pat.search(uri):
+                filename = match.groups()[1]
+                self._send_download(uri, '%s/%s' % \
+                        (os.getenv('HOME'), filename))
             if 'youtube.com' in uri:
                 uri = uri.replace('&noflv=1', '').replace('noflv=1&', '')
                 mp4_uri = uri.replace('&fmt=34', 
@@ -123,7 +128,7 @@ class CatchMovie(object):
                 self._send_download(uri, '%s/%s' % \
                         (os.getenv('HOME'), filename))
             else:
-                filename = match.groups()[-1]
+                filename = match.groups()[1]
                 self._send_download(uri, '%s/%s' % \
                         (os.getenv('HOME'), filename))
 

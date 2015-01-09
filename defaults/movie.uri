@@ -1,7 +1,7 @@
 # Movie patterns
 
-[\/=&]([^\/=&]*\.(ifl|fl.{1}|iflv|ogg|webm|mkv|m4v|mp4|avi|mov|rm))([^a-zA-Z0-9]|$)
+[\/=&]([^\/=&]*\.(ifl|fl.{1}|iflv|ogg|webm|mkv|m4v|mp4|avi|mov|rm|mp3|wav))([^a-zA-Z0-9]|$)
 youtube\.com.*video_id=(.*?)(&|$)
 \.megavideo\.com\/files\/(.*)\/
 \.googlevideo\.com\/videoplayback\?id=(.*?)&
-api\.soundcloud\.com\/tracks\/(.*?)\/stream\?client_id=(.*)
+api\.soundcloud\.com\/tracks(\/.*?)\/stream\?client_id=(.*)
