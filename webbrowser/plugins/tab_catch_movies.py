@@ -118,8 +118,12 @@ class CatchMovie(object):
                 filename = '%s.flv' % match.groups()[7]
                 self._send_download(uri, '%s/%s' % \
                         (os.getenv('HOME'), filename))
+            elif 'soundcloud' in uri:
+                filename = '%s.mp3' % match.groups()[8]
+                self._send_download(uri, '%s/%s' % \
+                        (os.getenv('HOME'), filename))
             else:
-                filename = match.groups()[1]
+                filename = match.groups()[-1]
                 self._send_download(uri, '%s/%s' % \
                         (os.getenv('HOME'), filename))
 
